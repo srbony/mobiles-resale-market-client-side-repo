@@ -26,6 +26,14 @@ const Blog = () => {
                     <p>The Prototypal Inheritance is a feature in javascript used to add methods and properties in objects. It is a method by which an object can inherit the properties and methods of another object. Traditionally, in order to get and set the [[Prototype]] of an object, we use Object. getPrototypeOf and Object</p>
                 </div>
             </div>
+            <div className='rounded-md bg-slate-500 p-8  my-5'>
+                <div className='text-white text-xl'>
+                    <h2 className='text-lime-400'>React vs Angular vs. Vue</h2>
+                    <p><span className='text-lime-400'>React:</span>One of the biggest of them is that React.js uses a virtual DOM that only compares the previous HTML code differences and only loads the different parts. This significantly impacts the loading times. In a positive way, of course.</p>
+                    <p> <span className='text-lime-400'>Angular:</span>The first version was Angular.JS. Angular is currently known as a JavaScrip.Angular.</p>
+                    <p><span className='text-lime-400'>Vue:</span>Vue.js is a JavaScript-based progressive framework for creating single-page applications. It was created with scalability and incrementality in mind, as well as ease of integration with other view layer frameworks.</p>
+                </div>
+            </div>
 
         </div>
     );
