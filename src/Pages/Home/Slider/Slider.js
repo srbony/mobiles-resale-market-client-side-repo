@@ -5,7 +5,7 @@ import slider3 from '../../../assets/slider3.png';
 
 const Slider = () => {
     return (
-        <div className="carousel w-full rounded-lg py-10">
+        <div className="carousel  w-full py-10 rounded-box">
             <div id="slide1" className="carousel-item relative w-full">
                 <img src={slider1} className="w-full rounded-lg" alt="mobile" />
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
