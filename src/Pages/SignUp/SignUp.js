@@ -19,7 +19,7 @@ const SignUp = () => {
             .catch(error => console.log(error))
     }
     return (
-        <div className='h-[550px] my-32 flex shadow-lg rounded-lg  justify-center items-center'>
+        <div className='h-[800px] my-32 flex shadow-lg rounded-lg  justify-center items-center'>
             <div className='w-1/2 p-7'>
                 <h2 className='text-3xl text-cyan-400 ml-16 mb-4 font-bold'>Sign Up</h2>
                 <form onSubmit={handleSubmit(handleSignUp)}>
