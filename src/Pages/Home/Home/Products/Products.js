@@ -16,7 +16,7 @@ const Products = () => {
 
             {
                 products.map(product => <div className='shadow-lg rounded'>
-                    {product.name}
+                    <p className='text-2xl text-center font-bold'>  {product.name}</p>
                     <img className='w-75 h-35 rounded-lg bg-slate-600' src={product.img} alt="" />
                 </div>)
             }
