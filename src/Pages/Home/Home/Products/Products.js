@@ -1,25 +1,41 @@
+import { useQuery } from '@tanstack/react-query';
 import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
+
 
 const Products = () => {
-    const [products, setProducts] = useState([]);
-    useEffect(() => {
-        fetch('products.json')
+  
+
+    const { data: products = [], isLoading } = useQuery({
+        queryKey: ['produc'],
+        queryFn: () => fetch('http://localhost:5000/categories')
             .then(res => res.json())
-            .then(data => {
-                setProducts(data)
-            })
-    }, [])
+    })
+
+
+
+
     return (
-        <div className='grid md:grid-cols-3 gap-4 my-4'>
+        <div className='grid md:grid-cols-3 gap-4 my-12'>
+
+
 
             {
-                products.map(product => <div className='shadow-lg rounded'>
-                    <p className='text-2xl text-center font-bold'>  {product.name}</p>
-                    <img className='w-75 h-35 rounded-lg bg-slate-600' src={product.img} alt="" />
+                products.map(product => <div className="card  card-compact  shadow-xl">
+                    <h2 className=" font-bold text-xl text-center">{product.name}</h2>
+                    <figure><img className='' src={product.img} alt="mobiles" /></figure>
+                    <div className="">
+
+
+                        <div className="">
+
+                            <button className="btn btn-primary">SEE ALL</button>
+
+
+                        </div>
+                    </div>
                 </div>)
             }
+
         </div>
     );
 };

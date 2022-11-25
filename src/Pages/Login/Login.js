@@ -1,23 +1,33 @@
 import React from 'react';
+import { useState } from 'react';
 import { useContext } from 'react';
 
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider';
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
 
     const { signIn } = useContext(AuthContext);
+    const [loginError, setLoginError] = useState('');
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location?.state?.from?.pathname || '/';
 
     const handleLogin = data => {
         console.log(data);
+        setLoginError('');
         signIn(data.email, data.password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                navigate(from, { replace: true });
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                console.log(error.message);
+                setLoginError(error.message)
+            })
     }
     return (
         <div className='h-[800px] my-32 flex shadow-lg rounded-lg  justify-center items-center'>
@@ -54,6 +64,11 @@ const Login = () => {
 
                     </div>
                     <button className='btn btn-info w-1/2'>Login</button>
+                    <div className='text-red-500'>
+                        {
+                            loginError && <p>{loginError}</p>
+                        }
+                    </div>
 
                 </form>
                 <p className='my-2 text-xl font semibold'>New to Product Resale Market? <Link to='/signup'><span className='font-bold text-cyan-400'>SignUp</span></Link></p>

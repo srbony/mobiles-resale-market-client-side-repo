@@ -1,22 +1,36 @@
 import React from 'react';
+import { useState } from 'react';
 import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider';
 
 const SignUp = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateUser } = useContext(AuthContext);
+    const [signUpError, setSignUpError] = useState('');
 
 
     const handleSignUp = data => {
         console.log(data);
+        setSignUpError('');
         createUser(data.email, data.password)
             .then(result => {
                 const user = result.user;
-                console.log(user)
+                console.log(user);
+                toast.success('User created successfully');
+                const userInfo = {
+                    displayName: data.name
+                }
+                updateUser(userInfo)
+                    .then(() => { })
+                    .catch(error => console.log(error))
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                console.log(error)
+                setSignUpError(error.message);
+            })
     }
     return (
         <div className='h-[800px] my-32 flex shadow-lg rounded-lg  justify-center items-center'>
@@ -60,6 +74,9 @@ const SignUp = () => {
 
                     </div>
                     <button className='btn btn-info w-1/2'>Sign Up</button>
+                    {
+                        signUpError && <p className='text-red-500'>{signUpError}</p>
+                    }
 
                 </form>
                 <p className='my-2 text-xl font semibold'>Already have an account? <Link to='/login'><span className='font-bold text-cyan-400'>Please Login</span></Link></p>
