@@ -1,0 +1,53 @@
+[
+    {
+        "category": "Samsung",
+        "category-image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-C5ei5_SFCS-kcrKJVNEuSJBPjLna9IgEMwFl4_F8it2T7tPSQt-q65yWMCqcEvYK2b0&usqp=CAU",
+        "products": [
+            {
+                "productName": "Samsung",
+                "productId": 1,
+                "productImage1": "https://drop.ndtv.com/albums/GADGETS/samsung_galaxy_s9_and_galaxy_s9_plus/samsung_galaxy_s9_plus_album_cover_ndtv_640x480.jpg?downsize=320:*",
+                "productImage2": "https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc3/Evolutia_camerelor_foto_pe_seria_emblematica_Samsung_Galaxy_S_8.png",
+                "Price": 20000,
+                "resalePrice": 15000,
+                "mobile": 1245646,
+                "description": "Samsung specializes in the production of a wide variety of consumer and industry electronics, including appliances, digital media devices, semiconductors, memory chips, and integrated systems",
+                "sellerName": "John due"
+            }
+        ]
+    },
+    {
+        "category": "Oppo",
+        "category-image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGugosEG7N4VQ6_35V4P4VhmIrsgV1xYC8Ag&usqp=CAU",
+        "products": [
+            {
+                "productName": "Oppo",
+                "productId": 1,
+                "productImage1": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJwZ0w_c5MYC45yA-ZAWJ-A72SlEm-6biTzA&usqp=CAU",
+                "productImage2": "https://assets.mspimages.in/c/tr:w-375,h-330,c-at_max/21485-296-1.jpg",
+                "Price": 25000,
+                "resalePrice": 20000,
+                "mobile": 1245646,
+                "description": "Oppo specializes in the production of a wide variety of consumer and industry electronics, including appliances, digital media devices, semiconductors, memory chips, and integrated systems",
+                "sellerName": "Maria mery"
+            }
+        ]
+    },
+    {
+        "category": "Apple",
+        "category-image": "https://www.mobiledokan.com/wp-content/uploads/2022/09/Apple-iPhone-14-Pro-Max.jpg",
+        "products": [
+            {
+                "productName": "Apple",
+                "productId": 1,
+                "productImage1": "https://www.mobiledokan.com/wp-content/uploads/2022/09/Apple-iPhone-14-Plus.jpg",
+                "productImage2": "https://www.apple.com/newsroom/images/product/iphone/geo/Apple_iPhone-13-Pro_iPhone-13-Pro-Max_GEO_09142021_inline.jpg.slideshow-medium_2x.jpg",
+                "Price": 35000,
+                "resalePrice": 30000,
+                "mobile": 1245646,
+                "description": "Samsung specializes in the production of a wide variety of consumer and industry electronics, including appliances, digital media devices, semiconductors, memory chips, and integrated systems",
+                "sellerName": "Rafsan billa"
+            }
+        ]
+    }
+]
