@@ -6,9 +6,15 @@ import Product from '../Product/Product';
 const Products = () => {
 
 
-    const { data: allproducts = [], } = useQuery({
-        queryKey: ['produc'],
-        queryFn: () => fetch('http://localhost:5000/allProducts')
+    // const { data: allproducts = [], } = useQuery({
+    //     queryKey: ['product'],
+    //     queryFn: () => fetch('http://localhost:5000/allProducts')
+    //         .then(res => res.json())
+    // })
+
+    const { data: allproducts = [] } = useQuery({
+        queryKey: ['product'],
+        queryFn: () => fetch('http://localhost:5000/categories')
             .then(res => res.json())
     })
 
@@ -19,7 +25,7 @@ const Products = () => {
         <div className='grid md:grid-cols-3 gap-4 my-12'>
 
             {
-                allproducts.map(product => <Product
+                allproducts.slice(0,3).map(product => <Product
                     product={product}
                     key={product._id}
                 ></Product>)
@@ -28,22 +34,7 @@ const Products = () => {
 
 
 
-            {/* {
-                products.map(product => <div className="card  card-compact  shadow-xl">
-                    <h2 className=" font-bold text-xl text-center">{product.name}</h2>
-                    <figure><img className='' src={product.img} alt="mobiles" /></figure>
-                    <div className="">
-
-
-                        <div className="">
-
-                            <button className="btn btn-primary">SEE ALL</button>
-
-
-                        </div>
-                    </div>
-                </div>)
-            } */}
+         
 
         </div>
     );
