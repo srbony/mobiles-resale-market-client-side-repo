@@ -1,4 +1,5 @@
 import React from 'react';
+import toast from 'react-hot-toast';
 
 
 const Modal = ({ items, user }) => {
@@ -25,10 +26,24 @@ const Modal = ({ items, user }) => {
             price,
             location
         }
+        fetch('http://localhost:5000/bookings', {
+            method: 'POST',
+            headers: {
+                'content-type': 'applicatioon/json'
+            },
+            body: JSON.stringify(booking)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.acknowledged) {
+                    toast.success('Item is booked');
+                }
+            })
 
 
 
-        console.log(booking);
+        // console.log(booking);
 
     }
 
