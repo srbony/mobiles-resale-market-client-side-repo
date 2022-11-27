@@ -1,3 +1,4 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
@@ -8,8 +9,9 @@ import { AuthContext } from '../../Contexts/AuthProvider';
 
 const SignUp = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const { createUser, updateUser } = useContext(AuthContext);
+    const { createUser, providerLogin, updateUser } = useContext(AuthContext);
     const [signUpError, setSignUpError] = useState('');
+    const googleProvider = new GoogleAuthProvider()
     const navigate = useNavigate();
 
 
@@ -34,8 +36,23 @@ const SignUp = () => {
             .catch(error => {
                 console.log(error)
                 setSignUpError(error.message);
+            });
+
+    }
+    const handleGoogleSignIn = () => {
+        providerLogin(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+
+            })
+            .catch(error => {
+                console.error(error);
+
             })
     }
+
+
     return (
         <div className='h-[800px] my-32 flex shadow-lg rounded-lg  justify-center items-center'>
             <div className='w-1/2 p-7'>
@@ -84,7 +101,7 @@ const SignUp = () => {
 
                 </form>
                 <p className='my-2 text-xl font semibold'>Already have an account? <Link to='/login'><span className='font-bold text-cyan-400'>Please Login</span></Link></p>
-                <button className='btn btn-info w-1/2'>Login With Google</button>
+                <button onClick={handleGoogleSignIn} className='btn btn-info w-1/2'>Login With Google</button>
 
             </div>
 

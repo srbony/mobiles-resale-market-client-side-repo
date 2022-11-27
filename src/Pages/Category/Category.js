@@ -14,7 +14,7 @@ const Category = () => {
     return (
         <div>
             <h2 className='text-center font-bold'>Available Category</h2>
-            <div className='flex justify-center '>
+            <div className='grid md:grid-cols-2 sm:grid-cols-1 '>
                 {
                     categoryData.map(data => <SingleCategory
                         data={data}

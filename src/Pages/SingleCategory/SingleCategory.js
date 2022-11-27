@@ -3,7 +3,7 @@ import React from 'react';
 const SingleCategory = ({ data, setItems }) => {
     const { productName, conditionType, price, yearsOfUse, date, sellerName, image, location, resalePrice, mobile, _id } = data;
     return (
-        <div className="card w-96 bg-base-100  shadow-xl">
+        <div className=" w-96 card bg-base-100  shadow-xl">
             <div className="card-body">
                 <h2 className="card-title">Product Name:{productName}</h2>
                 <p>Original Price:{price}</p>

@@ -26,10 +26,26 @@ const Modal = ({ items, user }) => {
             price,
             location
         }
+        console.log(booking);
+        // fetch('http://localhost:5000/bookings', {
+        //     method: 'POST',
+        //     headers: {
+        //         'content-type': 'applicatioon/json'
+        //     },
+        //     body: JSON.stringify(booking)
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log(data);
+        //         if (data.acknowledged) {
+        //             toast.success('Item is booked');
+        //         }
+        //     })
+
         fetch('http://localhost:5000/bookings', {
             method: 'POST',
             headers: {
-                'content-type': 'applicatioon/json'
+                'content-type': 'application/json'
             },
             body: JSON.stringify(booking)
         })
@@ -37,13 +53,13 @@ const Modal = ({ items, user }) => {
             .then(data => {
                 console.log(data);
                 if (data.acknowledged) {
-                    toast.success('Item is booked');
+                    toast.success('Item is booked')
                 }
             })
 
 
 
-        // console.log(booking);
+
 
     }
 
