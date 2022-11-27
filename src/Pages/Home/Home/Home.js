@@ -1,5 +1,5 @@
 import React from 'react';
-import Footer from '../../Shared/Footer/Footer';
+
 import Slider from '../Slider/Slider';
 import Products from './Products/Products';
 

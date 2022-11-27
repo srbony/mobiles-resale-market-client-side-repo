@@ -25,7 +25,7 @@ const Products = () => {
         <div className='grid md:grid-cols-3 gap-4 my-12'>
 
             {
-                allproducts.slice(0,3).map(product => <Product
+                allproducts.slice(0, 3).map(product => <Product
                     product={product}
                     key={product._id}
                 ></Product>)
@@ -34,7 +34,7 @@ const Products = () => {
 
 
 
-         
+
 
         </div>
     );

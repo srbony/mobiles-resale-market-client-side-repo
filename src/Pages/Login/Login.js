@@ -37,10 +37,19 @@ const Login = () => {
 
 
                     <div className="form-control w-full max-w-xs">
-                        <label className="label"><span className="label-text text-xl font-semibold">Email</span></label>
+                        <label className="label"><span className="label-text text-xl font-semibold">Name</span></label>
                         <input type="text"
+                            {...register("name",
+                                { required: "Name is required" })}
+                            className="input input-bordered w-full max-w-xs" />
+                        {errors.email && <span className='text-red-500'>Name required</span>}
+                    </div>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label"><span className="label-text text-xl font-semibold">Email</span></label>
+                        <input type="password"
                             {...register("email",
-                                { required: "Email Address is required" })}
+                                { required: 'email is required' })}
+
                             className="input input-bordered w-full max-w-xs" />
                         {errors.email && <span className='text-red-500'>Email is required</span>}
                     </div>
@@ -54,7 +63,7 @@ const Login = () => {
                         {errors.password && <span className='text-red-500'>Password is required</span>}
                     </div>
 
-                    <select className='text-xl my-4 font-semibold' {...register("category", { required: true })}>
+                    <select className='text-xl my-4 font-semibold' {...register("role", { required: true })}>
                         <option value="">Select Users</option>
                         <option value="Seller">Seller</option>
                         <option value="Buyer" >Buyer</option>

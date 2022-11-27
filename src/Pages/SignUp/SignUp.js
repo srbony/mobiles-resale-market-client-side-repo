@@ -23,6 +23,7 @@ const SignUp = () => {
                 toast.success('User created successfully');
                 const userInfo = {
                     displayName: data.name
+
                 }
                 updateUser(userInfo)
                     .then(() => {
@@ -67,7 +68,7 @@ const SignUp = () => {
                         {errors.password && <span className='text-red-500'>Password is required</span>}
                     </div>
 
-                    <select className='text-xl my-4 font-semibold' {...register("category", { required: true })}>
+                    <select className='text-xl my-4 font-semibold' {...register("role", { required: true })}>
                         <option value="">Select Users</option>
                         <option value="Seller">Seller</option>
                         <option value="Buyer" >Buyer</option>
