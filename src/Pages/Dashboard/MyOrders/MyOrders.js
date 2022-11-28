@@ -5,7 +5,7 @@ import { useState } from 'react';
 const MyOrders = () => {
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/bookings')
+        fetch('https://y-nu-wine.vercel.app/bookings')
             .then(res => res.json())
             .then(data => {
                 console.log(data)

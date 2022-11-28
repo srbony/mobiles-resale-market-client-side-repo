@@ -8,13 +8,13 @@ const Products = () => {
 
     // const { data: allproducts = [], } = useQuery({
     //     queryKey: ['product'],
-    //     queryFn: () => fetch('http://localhost:5000/allProducts')
+    //     queryFn: () => fetch('https://y-nu-wine.vercel.app/allProducts')
     //         .then(res => res.json())
     // })
 
     const { data: allproducts = [] } = useQuery({
         queryKey: ['product'],
-        queryFn: () => fetch('http://localhost:5000/categories')
+        queryFn: () => fetch('https://y-nu-wine.vercel.app/categories')
             .then(res => res.json())
     })
 

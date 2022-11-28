@@ -6,7 +6,7 @@ const MyProduct = () => {
     const [myProducts, setMyProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/categories')
+        fetch('https://y-nu-wine.vercel.app/categories')
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -15,7 +15,7 @@ const MyProduct = () => {
     }, [])
 
     const handleDelteProduct = id => {
-        fetch(`http://localhost:5000/categories/${id}`, {
+        fetch(`https://y-nu-wine.vercel.app/categories/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

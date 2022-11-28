@@ -6,13 +6,13 @@ const AllUsers = () => {
     const { data: users = [], refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/byers');
+            const res = await fetch('https://y-nu-wine.vercel.app/byers');
             const data = await res.json();
             return data;
         }
     });
     const handleMakeAdmin = id => {
-        fetch(`http://localhost:5000/byers/admin/${id}`, {
+        fetch(`https://y-nu-wine.vercel.app/byers/admin/${id}`, {
             method: 'PUT',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`

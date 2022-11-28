@@ -4,7 +4,7 @@ const useAdmin = email => {
     const [isAdmin, setIsAdmin] = useState(false);
     useEffect(() => {
         if (email) {
-            fetch(`http://localhost:5000/byers/admin/${email}`)
+            fetch(`https://y-nu-wine.vercel.app/byers/admin/${email}`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);

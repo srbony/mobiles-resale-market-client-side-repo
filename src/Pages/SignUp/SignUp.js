@@ -61,7 +61,7 @@ const SignUp = () => {
 
     const savedByer = (name, email, role) => {
         const byer = { name, email, role };
-        fetch('http://localhost:5000/byers', {
+        fetch('https://y-nu-wine.vercel.app/byers', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -78,7 +78,7 @@ const SignUp = () => {
     }
 
     // const getUserToken = email => {
-    //     fetch(`http://localhost:5000/jwt?email=${email}`)
+    //     fetch(`https://y-nu-wine.vercel.app/jwt?email=${email}`)
     //         .then(res => res.json())
     //         .then(data => {
     //             if (data.accessToken) {

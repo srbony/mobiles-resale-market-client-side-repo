@@ -27,7 +27,7 @@ const Modal = ({ items, user }) => {
             location
         }
         console.log(booking);
-        // fetch('http://localhost:5000/bookings', {
+        // fetch('https://y-nu-wine.vercel.app/bookings', {
         //     method: 'POST',
         //     headers: {
         //         'content-type': 'applicatioon/json'
@@ -42,7 +42,7 @@ const Modal = ({ items, user }) => {
         //         }
         //     })
 
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://y-nu-wine.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
