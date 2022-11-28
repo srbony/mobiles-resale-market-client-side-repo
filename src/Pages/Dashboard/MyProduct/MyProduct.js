@@ -14,10 +14,21 @@ const MyProduct = () => {
             })
     }, [])
 
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/categories')
+
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             console.log(data);
+    //             setMyProducts(data)
+    //         })
+    // }, [])
+
 
     return (
         <div>
-            <h2>My Product{myProducts.length}</h2>
+            <h2 className='text-center'>My Product</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full">
 

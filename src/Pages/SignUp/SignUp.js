@@ -6,14 +6,19 @@ import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider';
+import useToken from '../../hooks/useToken';
 
 const SignUp = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const { createUser, providerLogin, updateUser } = useContext(AuthContext);
     const [signUpError, setSignUpError] = useState('');
+    const [createdUserEmail, setCreatedUserEmail] = useState('')
     const googleProvider = new GoogleAuthProvider()
     const navigate = useNavigate();
-
+    const [token] = useToken(createdUserEmail);
+    if (token) {
+        navigate('/');
+    }
 
     const handleSignUp = data => {
         console.log(data);
@@ -29,7 +34,8 @@ const SignUp = () => {
                 }
                 updateUser(userInfo)
                     .then(() => {
-                        navigate('/')
+                        savedByer(data.name, data.email, data.role);
+
                     })
                     .catch(error => console.log(error))
             })
@@ -52,6 +58,35 @@ const SignUp = () => {
             })
     }
 
+
+    const savedByer = (name, email, role) => {
+        const byer = { name, email, role };
+        fetch('http://localhost:5000/byers', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(byer)
+        })
+            .then(res => res.json())
+            .then(data => {
+                setCreatedUserEmail(email)
+                // getUserToken(email)
+                // console.log("saved byer", data);
+
+            })
+    }
+
+    // const getUserToken = email => {
+    //     fetch(`http://localhost:5000/jwt?email=${email}`)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             if (data.accessToken) {
+    //                 localStorage.setItem('accessToken', data.accessToken)
+    //                 navigate('/')
+    //             }
+    //         })
+    // }
 
     return (
         <div className='h-[800px] my-32 flex shadow-lg rounded-lg  justify-center items-center'>
