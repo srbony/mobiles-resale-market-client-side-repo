@@ -14,16 +14,17 @@ const MyProduct = () => {
             })
     }, [])
 
-    // useEffect(() => {
-    //     fetch('http://localhost:5000/categories')
+    const handleDelteProduct = id => {
+        fetch(`http://localhost:5000/categories/${id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
+    }
 
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data);
-    //             setMyProducts(data)
-    //         })
-    // }, [])
+
 
 
     return (
@@ -45,13 +46,13 @@ const MyProduct = () => {
                     <tbody>
 
                         {
-                            myProducts.map((product, i) => <tr>
+                            myProducts.map((product, i) => <tr key={product._id}>
                                 <th>{i + 1}</th>
                                 <td>{product.productName}</td>
                                 <td>{product.price}</td>
                                 <td>{product.sellerName}</td>
-                                <td><button className='btn btn-sm'>Delete</button></td>
-                                <td><button className='btn btn-sm'>Advertise</button></td>
+                                <td><button onClick={() => handleDelteProduct(product._id)} className='btn btn-xm btn-primary'>Delete</button></td>
+                                <td><button className='btn btn-xm btn-primary'>Advertise</button></td>
                             </tr>)
                         }
 

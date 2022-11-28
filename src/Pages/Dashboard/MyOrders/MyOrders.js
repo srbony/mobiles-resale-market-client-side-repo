@@ -28,8 +28,8 @@ const MyOrders = () => {
                 </thead>
                 <tbody>
                     {
-                        orders.slice(0, 1).map(order => <tr>
-                            <th>1</th>
+                        orders.map((order, i) => <tr key={order._id}>
+                            <th>{i + 1}</th>
                             <td>{order.name}</td>
                             <td>{order.ItemName}</td>
                             <td>{order.price}</td>

@@ -68,3 +68,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Details about project
+1.I develop a project about used resaile mobiles,in this project i used mongodb and crud operations
+2.In this project if any users click on the one categories they see available product on this categories
+3.if any byers want ta buy any products they booked the products
+4.which product is booked bayer see the products
+5.in this project i implement jwt token forn any users
+### Live site link
+this live site link move here:[]
