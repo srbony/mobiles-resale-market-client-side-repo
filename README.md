@@ -75,5 +75,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 3.if any byers want ta buy any products they booked the products
 4.which product is booked bayer see the products
 5.in this project i implement jwt token forn any users
+###
+adminEmail:john@gmail.com
+admin password:123456
 ### Live site link
 this live site link move here:[https://product-resale-25b3b.web.app/]
