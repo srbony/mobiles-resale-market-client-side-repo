@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { toast } from 'react-hot-toast';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const MyProduct = () => {
@@ -14,14 +15,25 @@ const MyProduct = () => {
             })
     }, [])
 
-    const handleDelteProduct = id => {
-        fetch(`https://y-nu-wine.vercel.app/categories/${id}`, {
+    const handleDelteProduct = product => {
+        // console.log(product)
+        fetch(`https://y-nu-wine.vercel.app/categories/${product._id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                console.log(data);
+                if (data.deletedCount > 0) {
+                    toast.success(`${product.productName} Deleted successfully`)
+                }
             })
+        // fetch(`https://y-nu-wine.vercel.app/categories/${id}`, {
+        //     method: 'DELETE'
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log(data)
+        //     })
     }
 
 
@@ -51,7 +63,7 @@ const MyProduct = () => {
                                 <td>{product.productName}</td>
                                 <td>{product.price}</td>
                                 <td>{product.sellerName}</td>
-                                <td><button onClick={() => handleDelteProduct(product._id)} className='btn btn-xm btn-primary'>Delete</button></td>
+                                <td><button onClick={() => handleDelteProduct(product)} className='btn btn-xm btn-primary'>Delete</button></td>
                                 <td><button className='btn btn-xm btn-primary'>Advertise</button></td>
                             </tr>)
                         }
